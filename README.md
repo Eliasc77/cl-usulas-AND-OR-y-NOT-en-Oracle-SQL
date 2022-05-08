@@ -32,3 +32,44 @@ create table peliculas(
  | 900 | Tootsie  | D. Hoffman   | 90  | 
  | 1300 | Tootsie  | D. Hoffman   | 90  | 
  | 1301 | Elsa y Fred  | China Zorrilla   | 110  | 
+ 
+ 
+```sql
+select * from peliculas where actor = 'Tom Cruise' or  actor = 'Richard Gere';
+```
+ | codigo            | titulo               |   actor   |  duracion   |
+ | -----------------| :----------------:| --------:| --------:|
+ | 1021 | Harry Potter y la piedra filosofal |  Daniel R.   | 180   | 
+ | 1022 | Harry Potter y la camara secreta    | Daniel R.   | 190  | 
+ | 1234 | Mujer bonita |  Richard Gere  | 120   | 
+
+
+>para la clausula and, en la sentencia se debe cumplir ambas condiciones 
+
+```sql
+select * from peliculas where actor = 'Tom Cruise' and duracion = 100 ;
+```
+ | codigo            | titulo               |   actor   |  duracion   |
+ | -----------------| :----------------:| --------:| --------:|
+ 
+ ```sql
+select * from peliculas where actor = 'Tom Cruise' and duracion < 100 ;
+```
+ | codigo            | titulo               |   actor   |  duracion   |
+ | -----------------| :----------------:| --------:| --------:|
+ 
+ 
+ > la clausua NOT sirve para excluir un elemento en la consulta
+
+ ```sql
+select * from peliculas where NOT actor = 'Daniel R.' ;
+```
+
+ | codigo            | titulo               |   actor   |  duracion   |
+ | -----------------| :----------------:| --------:| --------:|
+ | 1020 | Mision imposible  |  Tom Cruise   | 120   | 
+ | 1200 | Mision imposible 2 |  Tom Cruise'  | 120   | 
+ | 1234 | Mujer bonita |  Richard Gere  | 120   | 
+ | 900 | Tootsie  | D. Hoffman   | 90  | 
+ | 1300 | Tootsie  | D. Hoffman   | 90  | 
+ | 1301 | Elsa y Fred  | China Zorrilla   | 110  | 
